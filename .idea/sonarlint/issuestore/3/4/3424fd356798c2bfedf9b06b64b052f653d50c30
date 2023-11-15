@@ -1,0 +1,18 @@
+
+7
+java:S1220""Move this file to a named package.8ıÊé§½1
+ƒ
+java:S4165'"aRemove this useless assignment; "idY" already holds the assigned value along all execution paths.(¨Çğîıÿÿÿÿ8‰Ëé§½1
+~
+java:S4165$"aRemove this useless assignment; "idX" already holds the assigned value along all execution paths.(µÚ«ñ8‰Ëé§½1
+>	java:S131""Add a default case to this switch.(Ä“á8•Ëé§½1
+F
+java:S1172$")Remove this unused method parameter "id".(µÚ«ñ8˜Ëé§½1
+K
+java:S1172'")Remove this unused method parameter "id".(¨Çğîıÿÿÿÿ8›Ëé§½1
+Q
+java:S1656'"/Remove or correct this useless self-assignment.(¨Çğîıÿÿÿÿ8œËé§½1
+L
+java:S1656$"/Remove or correct this useless self-assignment.(µÚ«ñ8Ëé§½1
+Z
+java:S1128"8Remove this unused import 'java.awt.event.MouseAdapter'.( ÜÍÁûÿÿÿÿ8Ëé§½1
