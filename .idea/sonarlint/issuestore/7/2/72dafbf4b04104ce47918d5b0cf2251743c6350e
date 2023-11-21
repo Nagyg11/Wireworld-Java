@@ -1,0 +1,9 @@
+
+t
+java:S1104"RMake wwData a static final constant or non-public and provide accessors if needed.(¢ûÌ­ùÿÿÿÿ8ëÃæŸ¿1
+7
+java:S1220""Move this file to a named package.8ìÃæŸ¿1
+n
+java:S22592"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘éùÑÿÿÿÿÿ8€ÄæŸ¿1
+n
+java:S2259&"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘éùÑÿÿÿÿÿ8€ÄæŸ¿1

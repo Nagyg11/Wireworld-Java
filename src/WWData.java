@@ -4,34 +4,20 @@ import java.io.*;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
-public class systemData {
+public class WWData {
     ArrayList<ArrayList<Integer>> wireWorldMatrix= new ArrayList<>();
 
-    public systemData(){
-        for(int c=0;c<50;c++){
+    public WWData(){}
+
+    public WWData(int column, int row){
+        for(int r=0;r<row;r++){
             wireWorldMatrix.add(new ArrayList<>());
-            for (int r=0;r<100;r++){
-                wireWorldMatrix.get(c).add(0);
+            for (int c=0;c<column;c++){
+                wireWorldMatrix.get(r).add(0);
             }
         }
 
 
-    }
-
-    public void updateWireWorldMatrix(Display dsp){
-
-                for (Component bt:getWWMapPanel(dsp).getComponents()){
-                    MyButton mbtn=(MyButton) bt;
-                    wireWorldMatrix.get(mbtn.getIdX()).set(mbtn.getIdY(),mbtn.getStatus());
-                }
-
-    }
-
-    public void updateWWMap(Display dsp){
-            for (Component bt : getWWMapPanel(dsp).getComponents()) {
-                MyButton mbtn = (MyButton) bt;
-                mbtn.setStatus(wireWorldMatrix.get(mbtn.getIdX()).get(mbtn.getIdY()));
-            }
     }
 
     public void loadWWDatas(String fileName){
@@ -60,13 +46,8 @@ public class systemData {
 
     }
 
-    private JPanel getWWMapPanel(Display dsp) {
-        for(Component cmpnt:dsp.getContentPane().getComponents()){
-            if(cmpnt.getName().equals("wireWorldMap")){
-                return (JPanel)cmpnt;
-            }
-        }
-        return null;
+    public ArrayList<ArrayList<Integer>> getWireWorldMatrix(){
+        return wireWorldMatrix;
     }
 
 

@@ -1,21 +1,18 @@
 
-i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÕÑë—8„Æ³î¾1
 7
 java:S1220""Move this file to a named package.8…Æ³î¾1
 n
-java:S2259"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(ıÓâõüÿÿÿÿ8°Æ³î¾1
-n
 java:S2259"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(ıÓâõüÿÿÿÿ8°Æ³î¾1
+n
+java:S2259"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(ıÓâõüÿÿÿÿ8°Æ³î¾1
+l
+java:S2095("OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÉÂÒ®8ßˆ»î¾1
 o
 java:S2095'"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(æåˆ„şÿÿÿÿ8ßˆ»î¾1
 m
 java:S20956"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(Ú§óÑ8°Æ³î¾1
-l
-java:S2095("OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÉÂÒ®8ßˆ»î¾1
 p
 java:S20955"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ø¸²—úÿÿÿÿ8öãºî¾1
 a
 java:S2147-"DCombine this catch with the one at line 43, which has the same body.(Ö¨š•8¹¯½î¾1
 L	java:S106:"+Replace this use of System.out by a logger.(©üâüûÿÿÿÿ8‰äºî¾1
-k
-java:S1128"NRemove this unused import 'java.sql.SQLIntegrityConstraintViolationException'.(¤¡†8™¬¼î¾1
