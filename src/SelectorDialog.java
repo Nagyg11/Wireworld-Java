@@ -23,7 +23,7 @@ public class SelectorDialog {
     public String getSaveName(){return saveName;}
 
     public boolean openNew(){
-        String selction[]={"100 X 50","150 X 70","90 X 40","80 X 35","55 X 25"};
+        String selction[]={"100 X 50","150 X 70","90 X 40","80 X 35","55 X 25","10 X 9"};
         cb=new JComboBox(selction);
         int out=JOptionPane.showConfirmDialog(cmpnt,cb,"Tábla méret választás.",JOptionPane.OK_CANCEL_OPTION);
         if(out==JOptionPane.OK_OPTION){
@@ -35,12 +35,10 @@ public class SelectorDialog {
         }
     }
 
-    public boolean openLoad(){
-        String selction[]={"100 X 50","150 X 70","90 X 40","80 X 35","55 X 25"};
-        File file=new File(System.getProperty("user.dir")+"\\maps");
+    public boolean openLoad(File savePlace){
         ArrayList<String> filesName=new ArrayList<>();
-        for(int i=0; i<file.listFiles().length; i++){
-            filesName.add(file.listFiles()[i].getName());
+        for(int i=0; i<savePlace.listFiles().length; i++){
+            filesName.add(savePlace.listFiles()[i].getName());
         }
 
         cb=new JComboBox(filesName.toArray());

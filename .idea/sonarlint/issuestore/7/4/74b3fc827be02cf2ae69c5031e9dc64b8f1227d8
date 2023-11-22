@@ -1,22 +1,7 @@
 
 ’
-java:S13191"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(”˜í¤ÿÿÿÿÿ8„êÜ¿1
+java:S1319)"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(”˜í¤ÿÿÿÿÿ8ƒÌœÈ¿1
 7
-java:S1220""Move this file to a named package.8„êÜ¿1
-p
-java:S2095'"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ø¸²—úÿÿÿÿ8˜êÜ¿1
-m
-java:S2095("PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(Ú§óÑ8˜êÜ¿1
-l
-java:S2095"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÉÂÒ®8˜êÜ¿1
-o
-java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(æåˆ„şÿÿÿÿ8˜êÜ¿1
-a
-java:S2147"DCombine this catch with the one at line 29, which has the same body.(Ö¨š•8§êÜ¿1
-L	java:S106,"+Replace this use of System.out by a logger.(©üâüûÿÿÿÿ8§êÜ¿1
-J
-java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8ÙÌÎ¿1
-B
-java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8ÙÌÎ¿1
-k
-java:S1128"NRemove this unused import 'java.sql.SQLIntegrityConstraintViolationException'.(¤¡†8ÙÌÎ¿1
+java:S1220""Move this file to a named package.8„ÌœÈ¿1
+G	java:S106"+Replace this use of System.out by a logger.(õ‘ÎÊ8©ÌœÈ¿1
+G	java:S106"+Replace this use of System.out by a logger.(‘ª¿ß8ªÌœÈ¿1

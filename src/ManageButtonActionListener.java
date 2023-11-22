@@ -2,10 +2,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class WWButtonActionListener implements ActionListener {
+public class ManageButtonActionListener implements ActionListener {
     WWControl wwc;
     Component cmpnt;
-    public WWButtonActionListener(WWControl wwc, Component cmpnt) {
+    public ManageButtonActionListener(WWControl wwc, Component cmpnt) {
         this.wwc=wwc;
         this.cmpnt=cmpnt;
     }
@@ -14,19 +14,19 @@ public class WWButtonActionListener implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
             switch (ae.getActionCommand()){
                 case "Start":
+                    wwc.run();
 
                     break;
                 case "Stop":
 
                     break;
 
-                    case "Reset":
+                case "Reset":
+                        wwc.resetToBeforeDunMatrix();
 
-                    break;
+                        break;
 
-                    case "Clear":
-
-                    break;
+                        case "Clear": break;
 
                     case "Save":
                         SelectorDialog sd=new SelectorDialog(cmpnt);

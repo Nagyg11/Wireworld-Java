@@ -37,7 +37,7 @@ public class MyButton extends JButton {
     public int getStatus(){return status;}
 
     public void setClearStatus(){
-        setBackground(Color.BLACK);
+        setStatus(0);
     }
 
     public void changeBetweenStatus(){

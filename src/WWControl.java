@@ -1,8 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.util.ArrayList;
 
 public class WWControl {
-    public WWData wwData;
+    WWData wwDataBeforeRun;
+    WWDataActual wwDataActual;
     WWDisplay wwDsp;
 
     int row;
@@ -10,12 +13,13 @@ public class WWControl {
 
     public WWControl(){
         wwDsp=new WWDisplay(this);
+        wwDataActual=new WWDataActual();
     }
 
     public void newWW(int c, int r){
         column=c;
         row=r;
-        wwData=new WWData(column,row);
+        wwDataActual=new WWDataActual(column,row);
 
 
         wwDsp.newWWMap(column,row);
@@ -23,10 +27,10 @@ public class WWControl {
     }
 
     public void loadWW(String fileName){
-        wwData=new WWData();
-        wwData.loadWWDatas(fileName);
-        column=wwData.getWireWorldMatrix().get(0).size();
-        row=wwData.getWireWorldMatrix().size();
+        wwDataActual=new WWDataActual();
+        wwDataActual.loadWWDataActuals(fileName);
+        column=wwDataActual.getWireWorldMatrix().get(0).size();
+        row=wwDataActual.getWireWorldMatrix().size();
         wwDsp.newWWMap(column,row);
 
         updateWWMap();
@@ -37,20 +41,34 @@ public class WWControl {
 
         for (Component bt:getWWMapPanel().getComponents()){
             MyButton mbtn=(MyButton) bt;
-            wwData.getWireWorldMatrix().get(mbtn.getIdY()).set(mbtn.getIdX(),mbtn.getStatus());
+            wwDataActual.getWireWorldMatrix().get(mbtn.getIdY()).set(mbtn.getIdX(),mbtn.getStatus());
         }
 
     }
 
     public void saveWW(String fileName){
-        wwData.saveWWDatas(fileName);
+        wwDataActual.saveWWDataActual(fileName);
     }
 
-    private void updateWWMap(){
+    public void updateWWMap(){
         for (Component bt : getWWMapPanel().getComponents()) {
             MyButton mbtn = (MyButton) bt;
-            mbtn.setStatus(wwData.getWireWorldMatrix().get(mbtn.getIdY()).get(mbtn.getIdX()));
+            mbtn.setStatus(wwDataActual.getWireWorldMatrix().get(mbtn.getIdY()).get(mbtn.getIdX()));
         }
+    }
+
+    public void stepWWDataActual(){
+        updateWireWorldMatrix();
+        wwDataActual.oneStep();
+        updateWWMap();
+    }
+
+    public void resetToBeforeDunMatrix(){
+        if(wwDataBeforeRun==null){
+            return;
+        }
+        wwDataActual.copy(wwDataBeforeRun);
+        updateWWMap();
     }
 
 
@@ -62,6 +80,23 @@ public class WWControl {
         }
         return null;
     }
+
+    public void saveBeforeRunMatrix(){
+        updateWireWorldMatrix();
+        wwDataBeforeRun=new WWData(column,row);
+        wwDataBeforeRun.copy(wwDataActual);
+    }
+
+    public void run(){
+        saveBeforeRunMatrix();
+        for(int i=0; i<20;i++){
+            stepWWDataActual();
+        }
+    }
+
+    public File getSavePlace(){return wwDataActual.getSavePlace();}
+
+
 
     public void setRow(int r){row=r;}
     public void setColumn(int c){column=c;}

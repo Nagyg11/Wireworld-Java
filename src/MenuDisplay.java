@@ -27,7 +27,7 @@ public class MenuDisplay extends JFrame {
 
         loadBtn.addActionListener((x)-> {
             SelectorDialog selector=new SelectorDialog(this);
-            if(!selector.openLoad()){
+            if(!selector.openLoad(wwc.getSavePlace())){
                 return;
             }
 

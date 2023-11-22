@@ -22,11 +22,11 @@ public class WWDisplay extends JFrame {
         MouseAdapter mA=new MyButtonMosueAction();
         //setLayout(new GridLayout(2,0));
 
-        for (int i=0; i<c; i++) {
-            for (int j=0; j<r; j++) {
+        for (int i=0; i<r; i++) {
+            for (int j=0; j<c; j++) {
                 MyButton btn=new MyButton();
-                btn.setIdX(i);
-                btn.setIdY(j);
+                btn.setIdX(j);
+                btn.setIdY(i);
                 btn.setClearStatus();
                 btn.addMouseListener(mA);
                 jpWWMap.add(btn);
@@ -35,7 +35,7 @@ public class WWDisplay extends JFrame {
         add(jpWWMap,BorderLayout.CENTER);
 
 
-        JPanel jpn=new JPanel(new GridLayout(2,0));
+        JPanel jpn=new JPanel();
 
         JButton btnStart=new JButton("Start");
         JButton btnStop=new JButton("Stop");
@@ -43,12 +43,12 @@ public class WWDisplay extends JFrame {
         JButton btnClear=new JButton("Clear");
         JButton btnSave=new JButton("Save");
 
-        ActionListener wwbal=new WWButtonActionListener(wwc,this);
-        btnStart.addActionListener(wwbal);
-        btnStop.addActionListener(wwbal);
-        btnReset.addActionListener(wwbal);
-        btnClear.addActionListener(wwbal);
-        btnSave.addActionListener(wwbal);
+        ActionListener mbal=new ManageButtonActionListener(wwc,this);
+        btnStart.addActionListener(mbal);
+        btnStop.addActionListener(mbal);
+        btnReset.addActionListener(mbal);
+        btnClear.addActionListener(mbal);
+        btnSave.addActionListener(mbal);
 
         btnStart.setActionCommand("Start");
         btnStop.setActionCommand("Stop");

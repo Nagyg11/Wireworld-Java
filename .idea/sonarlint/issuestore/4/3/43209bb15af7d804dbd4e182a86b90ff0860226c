@@ -1,0 +1,25 @@
+
+Q
+java:S10669"/Merge this if statement with the enclosing one.(©…‹İşÿÿÿÿ8ÿ†ÕÇ¿1
+7
+java:S1220""Move this file to a named package.8€‰Ç¿1
+p
+java:S2095""NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(îòÄÑÿÿÿÿÿ8îùÇ¿1
+l
+java:S2095"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÉÂÒ®8îùÇ¿1
+o
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ª¹²¢ÿÿÿÿÿ8îùÇ¿1
+m
+java:S2095#"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(Ú§óÑ8îùÇ¿1
+a
+java:S2147"DCombine this catch with the one at line 24, which has the same body.(Ö¨š•8Ó‰Ç¿1
+L	java:S106'"+Replace this use of System.out by a logger.(©üâüûÿÿÿÿ8İ‰Ç¿1
+t
+java:S3776,"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(ş¨ã˜ùÿÿÿÿ8Ş‰Ç¿1
+W	java:S1258"<This block of commented-out lines of code should be removed.(ƒ‘’o8§‡ÕÇ¿1
+J
+java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8¹îùÇ¿1
+B
+java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8¹îùÇ¿1
+k
+java:S1128"NRemove this unused import 'java.sql.SQLIntegrityConstraintViolationException'.(¤¡†8ºîùÇ¿1
