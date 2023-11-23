@@ -7,6 +7,7 @@ public class WWControl {
     WWData wwDataBeforeRun;
     WWDataActual wwDataActual;
     WWDisplay wwDsp;
+    Runner runner= new Runner(this);
 
     int row;
     int column;
@@ -29,8 +30,8 @@ public class WWControl {
     public void loadWW(String fileName){
         wwDataActual=new WWDataActual();
         wwDataActual.loadWWDataActuals(fileName);
-        column=wwDataActual.getWireWorldMatrix().get(0).size();
-        row=wwDataActual.getWireWorldMatrix().size();
+        column=wwDataActual.getColumnNum();
+        row=wwDataActual.getRowNum();
         wwDsp.newWWMap(column,row);
 
         updateWWMap();
@@ -41,7 +42,7 @@ public class WWControl {
 
         for (Component bt:getWWMapPanel().getComponents()){
             MyButton mbtn=(MyButton) bt;
-            wwDataActual.getWireWorldMatrix().get(mbtn.getIdY()).set(mbtn.getIdX(),mbtn.getStatus());
+            wwDataActual.setXY(mbtn.getIdX(),mbtn.getIdY(),mbtn.getStatus());
         }
 
     }
@@ -53,14 +54,11 @@ public class WWControl {
     public void updateWWMap(){
         for (Component bt : getWWMapPanel().getComponents()) {
             MyButton mbtn = (MyButton) bt;
-            mbtn.setStatus(wwDataActual.getWireWorldMatrix().get(mbtn.getIdY()).get(mbtn.getIdX()));
+            mbtn.setStatus(wwDataActual.getXY(mbtn.getIdX(),mbtn.getIdY()));
         }
     }
 
     public void stepWWDataActual(){
-        updateWireWorldMatrix();
-        wwDataActual.oneStep();
-        updateWWMap();
     }
 
     public void resetToBeforeDunMatrix(){
@@ -88,10 +86,21 @@ public class WWControl {
     }
 
     public void run(){
-        saveBeforeRunMatrix();
-        for(int i=0; i<20;i++){
-            stepWWDataActual();
+        if(!runner.getWWLoop()){
+            saveBeforeRunMatrix();
+            runner=new Runner(this);
+            runner.setWWLoop(true);
+            runner.start();
         }
+    }
+
+    public void stop(){
+        runner.setWWLoop(false);
+    }
+
+    public void clearMap(){
+        wwDataActual.resetWireWorldMatrix();
+        updateWWMap();
     }
 
     public File getSavePlace(){return wwDataActual.getSavePlace();}

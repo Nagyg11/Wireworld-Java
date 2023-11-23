@@ -15,27 +15,28 @@ public class ManageButtonActionListener implements ActionListener {
             switch (ae.getActionCommand()){
                 case "Start":
                     wwc.run();
-
                     break;
                 case "Stop":
-
+                    wwc.stop();
                     break;
 
                 case "Reset":
+                        wwc.stop();
                         wwc.resetToBeforeDunMatrix();
+                break;
 
-                        break;
-
-                        case "Clear": break;
-
-                    case "Save":
+                case "Clear":
+                        wwc.stop();
+                        wwc.clearMap();
+                break;
+                case "Save":
                         SelectorDialog sd=new SelectorDialog(cmpnt);
                         if(!sd.selectSaveName()){
                             return;
                         }
                         wwc.updateWireWorldMatrix();
                         wwc.saveWW(sd.getSaveName());
-                    break;
+                break;
             }
     }
 }

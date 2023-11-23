@@ -23,8 +23,8 @@ public class WWData {
     }
 
     public void copy(WWData wwData){
-        System.out.println(this.column+" "+this.row);
-        System.out.println(wwData.column+" "+wwData.row);
+        //System.out.println(this.column+" "+this.row);
+        //System.out.println(wwData.column+" "+wwData.row);
         for(int r=0;r<wwData.row;r++) {
             for (int c = 0; c < wwData.column; c++) {
                 setXY(c, r, wwData.getXY(c, r));
@@ -36,10 +36,10 @@ public class WWData {
     protected void setXY(int x, int y,int value){wireWorldMatrix.get(y).set(x,value);}
 
     public int getColumnNum(){return column;}
-    public int getRow(){return row;}
+    public int getRowNum(){return row;}
 
-    public ArrayList<ArrayList<Integer>> getWireWorldMatrix(){
+    /*public ArrayList<ArrayList<Integer>> getWireWorldMatrix(){
         return wireWorldMatrix;
-    }
+    }*/
     public File getSavePlace(){return savePlace;}
 }

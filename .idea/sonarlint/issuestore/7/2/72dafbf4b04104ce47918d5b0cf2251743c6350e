@@ -1,9 +1,9 @@
 
 7
-java:S1220""Move this file to a named package.8ÿ÷¡È¿1
+java:S1220""Move this file to a named package.8ÿó‰ç¿1
 n
-java:S2259*"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘éùÑÿÿÿÿÿ8¹ž¢È¿1
+java:S22597"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘éùÑÿÿÿÿÿ8žô‰ç¿1
 n
-java:S22596"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘éùÑÿÿÿÿÿ8–ø¡È¿1
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ä¹£È¿1
+java:S2259+"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘éùÑÿÿÿÿÿ8žô‰ç¿1
+£
+java:S1186="€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õ›Ÿ¿ÿÿÿÿÿ8Ÿô‰ç¿1

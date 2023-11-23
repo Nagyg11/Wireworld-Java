@@ -1,5 +1,12 @@
 
-0
-java:S1220""Move this file to a named package.
-
-java:S1186	"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ú¡­,8ı¶¿1
+Q
+java:S10664"/Merge this if statement with the enclosing one.(ºı¾¢ûÿÿÿÿ8–¼÷å¿1
+7
+java:S1220""Move this file to a named package.8—¼÷å¿1
+W
+java:S1161":Add the "@Override" annotation above this method signature(“–ış8À½÷å¿1
+t
+java:S3776*"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Õ€âóøÿÿÿÿ8Æ½÷å¿1
+W	java:S1253"<This block of commented-out lines of code should be removed.(ƒ‘’o8È½÷å¿1
+L
+java:S1128"*Remove this unused import 'java.sql.Time'.(Üå»‰şÿÿÿÿ8Ê½÷å¿1

@@ -41,34 +41,12 @@ public class WWDataActual extends WWData{
 
     }
 
-    public void oneStep(){
-        WWData permanent=new WWData(this.column,this.row);
-        permanent.copy(this);
-        int rowNum=permanent.row;
-        int columnNum=permanent.column;
 
-        for(int x=0;x<columnNum;x++){
-            for (int y=0;y<rowNum;y++){
-                if(permanent.getXY(x,y)==1){
-                    for(int deltaX=-1; deltaX<=1;deltaX++){
-                        for (int deltaY=-1; deltaY<=1;deltaY++){
-                            if(!(deltaX==0 && deltaY==0) && (0<=x+deltaX && x+deltaX < columnNum) && (0<=y+deltaY && y+deltaY < rowNum)){
-                                //System.out.println(x+deltaX+" "+y+deltaY);
-                                if(permanent.getXY(x+deltaX,y+deltaY)==3){
-                                    setXY(x+deltaX,y+deltaY,1);
-                                }
-                            }
-                        }
-                    }
-                    setXY(x,y,2);
-                }else if(permanent.getXY(x,y)==2){
-                    setXY(x,y,3);
-
-                }
+    public void resetWireWorldMatrix() {
+        for (int x=0;x<column;x++){
+            for (int y=0;y<row;y++){
+                setXY(x,y,0);
             }
         }
-
     }
-
-
 }

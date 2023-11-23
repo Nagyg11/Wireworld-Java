@@ -23,7 +23,7 @@ public class SelectorDialog {
     public String getSaveName(){return saveName;}
 
     public boolean openNew(){
-        String selction[]={"100 X 50","150 X 70","90 X 40","80 X 35","55 X 25","10 X 9"};
+        String selction[]={"100 X 50","150 X 70","90 X 40","80 X 35","55 X 27","10 X 5"};
         cb=new JComboBox(selction);
         int out=JOptionPane.showConfirmDialog(cmpnt,cb,"Tábla méret választás.",JOptionPane.OK_CANCEL_OPTION);
         if(out==JOptionPane.OK_OPTION){

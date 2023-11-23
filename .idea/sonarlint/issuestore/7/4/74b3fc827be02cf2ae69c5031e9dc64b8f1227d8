@@ -1,7 +1,5 @@
 
-’
-java:S1319)"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(”˜í¤ÿÿÿÿÿ8ƒÌœÈ¿1
 7
-java:S1220""Move this file to a named package.8„ÌœÈ¿1
-G	java:S106"+Replace this use of System.out by a logger.(õ‘ÎÊ8©ÌœÈ¿1
-G	java:S106"+Replace this use of System.out by a logger.(‘ª¿ß8ªÌœÈ¿1
+java:S1220""Move this file to a named package.8ÄÁ·È¿1
+]	java:S125"<This block of commented-out lines of code should be removed.(õøıßûÿÿÿÿ8Ù÷àÉ¿1
+X	java:S125)"<This block of commented-out lines of code should be removed.(”Š©ò8ªÂ·È¿1
