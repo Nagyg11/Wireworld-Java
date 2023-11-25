@@ -13,9 +13,9 @@ public class WWDataActual extends WWData{
         super(column,row);
     }
 
-    public void loadWWDataActuals(String fileName){
+    public void loadWWDataActuals(String filePath){
         try {
-            FileInputStream f = new FileInputStream(savePlace+File.separator+fileName);
+            FileInputStream f = new FileInputStream(filePath);
             ObjectInputStream in = new ObjectInputStream(f);
             wireWorldMatrix = (ArrayList<ArrayList<Integer>>) in.readObject();
             in.close();
@@ -29,9 +29,9 @@ public class WWDataActual extends WWData{
 
     }
 
-    public void saveWWDataActual(String fileName)  {
+    public void saveWWDataActual(String filePath)  {
         try {
-            FileOutputStream f = new FileOutputStream(savePlace+File.separator+fileName);
+            FileOutputStream f = new FileOutputStream(filePath);
             ObjectOutputStream out = new ObjectOutputStream(f);
             out.writeObject(wireWorldMatrix);
             out.close();

@@ -2,10 +2,9 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class WWData {
-    ArrayList<ArrayList<Integer>> wireWorldMatrix= new ArrayList<>();
-    static File savePlace=new File(System.getProperty("user.dir")+File.separator+"maps");
-    int column;
-    int row;
+    protected ArrayList<ArrayList<Integer>> wireWorldMatrix= new ArrayList<>();
+    protected int column;
+    protected int row;
 
     public WWData(){
     }
@@ -37,9 +36,4 @@ public class WWData {
 
     public int getColumnNum(){return column;}
     public int getRowNum(){return row;}
-
-    /*public ArrayList<ArrayList<Integer>> getWireWorldMatrix(){
-        return wireWorldMatrix;
-    }*/
-    public File getSavePlace(){return savePlace;}
 }

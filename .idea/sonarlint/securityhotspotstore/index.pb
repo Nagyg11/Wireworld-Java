@@ -28,3 +28,5 @@ S
 src/Runner.java,0\0\006394e661acb80da1dbbce3736aace4fa9b98fc
 E
 src/WWDataActual.java,4\3\43209bb15af7d804dbd4e182a86b90ff0860226c
+F
+src/StatusChanger.java,5\e\5e445b36c289e14f432c03ca2c76ef8af3cb476f

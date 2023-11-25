@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 public class ManageButtonActionListener implements ActionListener {
     WWControl wwc;
     Component cmpnt;
+    SelectorDialog sd=new SelectorDialog(cmpnt);
     public ManageButtonActionListener(WWControl wwc, Component cmpnt) {
         this.wwc=wwc;
         this.cmpnt=cmpnt;
@@ -21,22 +22,37 @@ public class ManageButtonActionListener implements ActionListener {
                     break;
 
                 case "Reset":
-                        wwc.stop();
-                        wwc.resetToBeforeDunMatrix();
-                break;
+                        wwc.resetToBeforeRunMatrix();
+                    break;
 
                 case "Clear":
-                        wwc.stop();
                         wwc.clearMap();
-                break;
+                    break;
                 case "Save":
-                        SelectorDialog sd=new SelectorDialog(cmpnt);
+                        wwc.stop();
                         if(!sd.selectSaveName()){
                             return;
                         }
                         wwc.updateWireWorldMatrix();
                         wwc.saveWW(sd.getSaveName());
-                break;
+                    break;
+
+                case "Load":
+                    wwc.stop();
+                    if(!sd.openLoad(wwc.getSavePlace())){
+                        return;
+                    }
+                    wwc.setVisible(false);
+                    wwc=new WWControl();
+                    wwc.loadWW(sd.getLoadFileName());
+                    break;
+                case "Speed":
+                    wwc.stop();
+                    if(!sd.selectSpeed(wwc)){
+                        return;
+                    }
+                    wwc.setWaitTime(sd.getSpeed());
+                    break;
             }
     }
 }

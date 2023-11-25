@@ -5,8 +5,8 @@ import java.awt.event.MouseEvent;
 
 public class MyButtonMosueAction extends MouseAdapter {
 
-    boolean pressLeft=false;
-    boolean pressRight=false;
+    private boolean pressLeft=false;
+    private boolean pressRight=false;
 
     @Override
     public void mousePressed(MouseEvent me) {

@@ -3,9 +3,9 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 
 public class MyButton extends JButton {
-    int idX;
-    int idY;
-    int status;
+    private int idX;
+    private int idY;
+    private int status;
 
     public MyButton(){}
 

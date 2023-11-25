@@ -1,20 +1,20 @@
 
 7
-java:S1220""Move this file to a named package.8ê¿–ç¿1
+java:S1220""Move this file to a named package.8Ğİ¿‰À1
 p
-java:S2095""NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(îòÄÑÿÿÿÿÿ8€À–ç¿1
-l
-java:S2095"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÉÂÒ®8€À–ç¿1
+java:S2095""NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(›ÇØ ûÿÿÿÿ8àİ¿‰À1
 m
-java:S2095#"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(Ú§óÑ8€À–ç¿1
+java:S2095#"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(Ú§óÑ8àİ¿‰À1
+l
+java:S2095"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÉÂÒ®8àİ¿‰À1
 o
-java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ª¹²¢ÿÿÿÿÿ8€À–ç¿1
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.( Ÿ¢£ıÿÿÿÿ8àİ¿‰À1
 a
-java:S2147"DCombine this catch with the one at line 24, which has the same body.(Ö¨š•8…À–ç¿1
-L	java:S106'"+Replace this use of System.out by a logger.(©üâüûÿÿÿÿ8À–ç¿1
+java:S2147"DCombine this catch with the one at line 24, which has the same body.(Ö¨š•8àİ¿‰À1
+L	java:S106'"+Replace this use of System.out by a logger.(©üâüûÿÿÿÿ8êİ¿‰À1
 J
-java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8¨µ—ç¿1
+java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8êİ¿‰À1
 B
-java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8¨µ—ç¿1
+java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8êİ¿‰À1
 k
-java:S1128"NRemove this unused import 'java.sql.SQLIntegrityConstraintViolationException'.(¤¡†8¨µ—ç¿1
+java:S1128"NRemove this unused import 'java.sql.SQLIntegrityConstraintViolationException'.(¤¡†8êİ¿‰À1

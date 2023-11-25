@@ -1,16 +1,19 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.util.ArrayList;
 
 public class WWControl {
-    WWData wwDataBeforeRun;
-    WWDataActual wwDataActual;
-    WWDisplay wwDsp;
-    Runner runner= new Runner(this);
+    private WWData wwDataBeforeRun;
+    private WWDataActual wwDataActual;
+    private WWDisplay wwDsp;
+    private Runner runner= new Runner(this, wwDataActual);
 
-    int row;
-    int column;
+    private static ImageIcon logo =new ImageIcon(System.getProperty("user.dir")+ File.separator+"img"+File.separator+"wireworld.png");
+
+    private static File savePlace=new File(System.getProperty("user.dir")+File.separator+"maps");
+
+    private int row;
+    private int column;
 
     public WWControl(){
         wwDsp=new WWDisplay(this);
@@ -29,7 +32,7 @@ public class WWControl {
 
     public void loadWW(String fileName){
         wwDataActual=new WWDataActual();
-        wwDataActual.loadWWDataActuals(fileName);
+        wwDataActual.loadWWDataActuals(savePlace+File.separator+fileName);
         column=wwDataActual.getColumnNum();
         row=wwDataActual.getRowNum();
         wwDsp.newWWMap(column,row);
@@ -48,7 +51,8 @@ public class WWControl {
     }
 
     public void saveWW(String fileName){
-        wwDataActual.saveWWDataActual(fileName);
+        stop();
+        wwDataActual.saveWWDataActual(savePlace+File.separator+fileName);
     }
 
     public void updateWWMap(){
@@ -61,7 +65,8 @@ public class WWControl {
     public void stepWWDataActual(){
     }
 
-    public void resetToBeforeDunMatrix(){
+    public void resetToBeforeRunMatrix(){
+        stop();
         if(wwDataBeforeRun==null){
             return;
         }
@@ -88,7 +93,7 @@ public class WWControl {
     public void run(){
         if(!runner.getWWLoop()){
             saveBeforeRunMatrix();
-            runner=new Runner(this);
+            runner=new Runner(this, wwDataActual);
             runner.setWWLoop(true);
             runner.start();
         }
@@ -99,13 +104,28 @@ public class WWControl {
     }
 
     public void clearMap(){
+        stop();
         wwDataActual.resetWireWorldMatrix();
         updateWWMap();
     }
 
-    public File getSavePlace(){return wwDataActual.getSavePlace();}
+    public void setVisible(boolean value){
+        stop();
+        wwDsp.setVisible(value);
+    }
 
+    public void setWaitTime(double value){
+        stop();
+        runner.setWaitTime(value);
+    }
 
+    public double getWaitTime(){return runner.getWaitTime();}
+
+    public File getSavePlace(){return savePlace;}
+
+    public ImageIcon getLogo() {
+        return logo;
+    }
 
     public void setRow(int r){row=r;}
     public void setColumn(int c){column=c;}
