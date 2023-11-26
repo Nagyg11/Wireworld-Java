@@ -2,27 +2,63 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
+/**
+ * Ezen osztály az adattároló és a megjelenítést összekötő függvényeket valósít meg az adatok és megjelenítés manipulációjához.
+ * */
 public class WWControl {
-    private WWData wwDataBeforeRun;
-    private WWDataActual wwDataActual;
-    private WWDisplay wwDsp;
-    private Runner runner= new Runner(this, wwDataActual);
 
+    /**
+     * Ezen tagváltozó a futtatás előttti állapotot tárolja az adattárolóból.
+     * */
+    private WWData wwDataBeforeRun;
+
+    /**
+     * Ezen tagváltozó az mindig aktuális állapotát tárolja a wire world mapnek, az adattárolóban
+     * */
+    private WWDataActual wwDataActual;
+
+    /**
+     * Ezen tagváltozó tárolja a megjelenítés elemeit.
+     * */
+    private WWDisplay wwDsp;
+
+    /**
+     * Ezen tagváltozó futtatás létrehozás szükséges.
+     * */
+    private Runner runner;
+
+    /**
+     * Ezen statikus tagváltozó a logo elérési útvonalát tárolja.
+     * */
     private static ImageIcon logo =new ImageIcon(System.getProperty("user.dir")+ File.separator+"img"+File.separator+"wireworld.png");
 
+    /**
+     * Ezen statikus tagváltozó a mentési hely eléri útvonalát adja meg.
+     * */
     private static File savePlace=new File(System.getProperty("user.dir")+File.separator+"maps");
 
+    /**
+     * Ezen tagváltozó tárolja hány sorból van a tárol wire world map
+     * */
     private int row;
+
+    /**
+     * Ezen tagváltozó tárolja hány oszlopból van a tárol wire world map
+     * */
     private int column;
 
     public WWControl(){
         wwDsp=new WWDisplay(this);
         wwDataActual=new WWDataActual();
+        runner= new Runner(this);
     }
 
-    public void newWW(int c, int r){
-        column=c;
-        row=r;
+    /**
+     * Ezen függvény egy új wire world map megjelenítését végzi és létrehozza a megfelelő adattárolót.
+     * */
+    public void newWW(int column, int row){
+        this.column=column;
+        this.row=row;
         wwDataActual=new WWDataActual(column,row);
 
 
@@ -30,6 +66,9 @@ public class WWControl {
         wwDsp.setVisible(true);
     }
 
+    /**
+     * Ezen függvény betölti a paraméterben megadottt mentett map-et megjelenítését és az adattárolóba is.
+     * */
     public void loadWW(String fileName){
         wwDataActual=new WWDataActual();
         wwDataActual.loadWWDataActuals(savePlace+File.separator+fileName);
@@ -41,10 +80,13 @@ public class WWControl {
         wwDsp.setVisible(true);
     }
 
+    /**
+     * Ezen függvény frissíti az adattárolót a megjelnített mezők alapján.
+     * */
     public void updateWireWorldMatrix(){
 
         for (Component bt:getWWMapPanel().getComponents()){
-            MyButton mbtn=(MyButton) bt;
+            MapButton mbtn=(MapButton) bt;
             wwDataActual.setXY(mbtn.getIdX(),mbtn.getIdY(),mbtn.getStatus());
         }
 
@@ -55,16 +97,20 @@ public class WWControl {
         wwDataActual.saveWWDataActual(savePlace+File.separator+fileName);
     }
 
+
+    /**
+     * Ezen függvény frissíti a megjelnítést az adatárolónak megfelelően.
+     * */
     public void updateWWMap(){
         for (Component bt : getWWMapPanel().getComponents()) {
-            MyButton mbtn = (MyButton) bt;
+            MapButton mbtn = (MapButton) bt;
             mbtn.setStatus(wwDataActual.getXY(mbtn.getIdX(),mbtn.getIdY()));
         }
     }
 
-    public void stepWWDataActual(){
-    }
-
+    /**
+     * Ezen függvény visszaállítja az aktuális adattárolót és a megjelnítést a futtatás előtti állapotba.
+     * */
     public void resetToBeforeRunMatrix(){
         stop();
         if(wwDataBeforeRun==null){
@@ -75,6 +121,9 @@ public class WWControl {
     }
 
 
+    /**
+     * @return a MapButton-ket tároló JPanel-t adja vissza.
+     * */
     private JPanel getWWMapPanel() {
         for(Component cmpnt:wwDsp.getContentPane().getComponents()){
             if(cmpnt.getName().equals("wireWorldMap")){
@@ -84,25 +133,37 @@ public class WWControl {
         return null;
     }
 
+    /**
+     * Ezen függvény elmenti a futtás előtti álapoto a megfelelő tagváltozóba, a visszaállítás érdekében.
+     * */
     public void saveBeforeRunMatrix(){
         updateWireWorldMatrix();
         wwDataBeforeRun=new WWData(column,row);
         wwDataBeforeRun.copy(wwDataActual);
     }
 
+    /**
+     * Ezen függvény futtatja wire world szabályainak megfelelően az adattárolót és megjelenítést.
+     * */
     public void run(){
         if(!runner.getWWLoop()){
             saveBeforeRunMatrix();
-            runner=new Runner(this, wwDataActual);
+            runner=new Runner(this);
             runner.setWWLoop(true);
             runner.start();
         }
     }
 
+    /**
+     * Ezen függvény leállítja a futtatást.
+     * */
     public void stop(){
         runner.setWWLoop(false);
     }
 
+    /**
+     * Ezen függvény üressé állítja az összes mezőt.
+     * */
     public void clearMap(){
         stop();
         wwDataActual.resetWireWorldMatrix();
@@ -119,6 +180,11 @@ public class WWControl {
         runner.setWaitTime(value);
     }
 
+    public boolean oneStep(){
+        StatusChanger statusChanger=new StatusChanger();
+        return statusChanger.oneStep(wwDataActual);
+    }
+
     public double getWaitTime(){return runner.getWaitTime();}
 
     public File getSavePlace(){return savePlace;}
@@ -126,11 +192,5 @@ public class WWControl {
     public ImageIcon getLogo() {
         return logo;
     }
-
-    public void setRow(int r){row=r;}
-    public void setColumn(int c){column=c;}
-
-    public int getRow(){return row;}
-    public int getColumn(){return column;}
 
 }

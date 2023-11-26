@@ -2,13 +2,29 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+* A ManageButtonActionListener osztály arra szolgál, hogy a Wire World map-ot közvetlen vezérlő menü gombok lenyomása esetén a megfelelő az adott gombhoz tartozó tevékenységek végrehajtódjanak.
+* */
 public class ManageButtonActionListener implements ActionListener {
-    WWControl wwc;
-    Component cmpnt;
-    SelectorDialog sd=new SelectorDialog(cmpnt);
+
+    /**
+     * Az adatok és megjelnítésének vezérléséhez szükséges tagváltozó.
+     * */
+    private WWControl wwc;
+
+    /**
+     * A SelectorDialog osztály fügvényeihez szükséges szülő elem tárolásához szükséges tagváltozó.
+     * */
+    private Component cmpnt;
+
+    /**
+     * Ezen tagváltozó a felugró ablakok megjelnításáre szolgáló osztály példánya. Célja, hogy megjeleníthetők legyenek a különböző felugró ablakok.
+     * */
+    private SelectorDialog sd;
     public ManageButtonActionListener(WWControl wwc, Component cmpnt) {
         this.wwc=wwc;
         this.cmpnt=cmpnt;
+        sd=new SelectorDialog(this.cmpnt);
     }
 
     @Override
@@ -35,6 +51,17 @@ public class ManageButtonActionListener implements ActionListener {
                         }
                         wwc.updateWireWorldMatrix();
                         wwc.saveWW(sd.getSaveName());
+                    break;
+
+                case "New":
+                        wwc.stop();
+                        if(!sd.openNew()){
+                            return;
+                        }
+                        wwc.setVisible(false);
+                        wwc=new WWControl();
+                        wwc.newWW(sd.getColumn(), sd.getRow());
+
                     break;
 
                 case "Load":

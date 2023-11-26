@@ -1,9 +1,9 @@
 
 7
-java:S1220""Move this file to a named package.8°בֳ‰ְ1
+java:S1220""Move this file to a named package.8¶קרÚְ1
 n
-java:S2259."LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘ישׁÿÿÿÿÿ8ױבֳ‰ְ1
+java:S2259i"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘ישׁÿÿÿÿÿ8יקרÚְ1
 n
-java:S2259;"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘ישׁÿÿÿÿÿ8ױבֳ‰ְ1
-£
-java:S1186A"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ץ›¿ÿÿÿÿÿ8ױבֳ‰ְ1
+java:S2259X"LA "NullPointerException" could be thrown; "getWWMapPanel()" can return null.(‘ישׁÿÿÿÿÿ8טקרÚְ1
+S
+java:S2209´"5Change this instance-reference to a static reference.(ס³­8ּ­¼חְ1

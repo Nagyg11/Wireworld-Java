@@ -1,10 +1,14 @@
 import java.awt.*;
 
+/**
+* A Wire World map gombokkal való megvalósítására szolgáló osztály, GridLayout leszármazottja.
+* Ezen GridLayout leszármazotal érhető el, hogy minden gomb nyégyzet alakú legyen mindig az ablak különböző méretezése mellett is.
+* Forrás:
+* */
 public class GridSquare extends GridLayout {
     public GridSquare(int rows, int cols) {
         super(rows, cols);
     }
-
 
     @Override
     public void layoutContainer(Container parent) {
