@@ -56,7 +56,7 @@ public class SelectorDialog {
      * @return választott-e a felhasználó, az ok gomb lenyomásával?
      * */
     public boolean openNew(){
-        String[] selction={"100 X 50","150 X 70","90 X 40","80 X 35","55 X 27","10 X 5"};
+        String[] selction={"100 X 50","150 X 70","90 X 45","55 X 27","10 X 5"};
         cb=new JComboBox(selction);
         Object[] selObj={"Kérem válasszon map méretet!",cb};
 

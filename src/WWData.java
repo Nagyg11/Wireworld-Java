@@ -25,9 +25,9 @@ public class WWData {
 
 
     /**
+     * Ezen konstruktor a paraméterben kapott oszlop és sor számú 2 dimenziós listát hoz létre.
      * @param column oszlopk számát adja meg. Azaz hány elmeből állnak a listában szereplő listák.
      * @param row sorok számát adja meg. Hány listából áll a listákat tároló lista.
-     * Ezen konstruktor a paraméterben kapott oszlop és sor számú 2 dimenziós listát hoz létre.
      * */
     public WWData(int column, int row){
         this.column=column;
@@ -41,8 +41,8 @@ public class WWData {
     }
 
     /**
-     * @param wwData azon adattároló amelynek adatait másolni szeretnénk.
      * Ez a függvény a paraméterben kapott adattároló értékeit másolja az adattárolóba ami, meghívta. Lényege hogy ne referncia szeint legyen érték át adva.
+     * @param wwData azon adattároló amelynek adatait másolni szeretnénk.
      * */
     public void copy(WWData wwData){
         for(int r=0;r<wwData.row;r++) {

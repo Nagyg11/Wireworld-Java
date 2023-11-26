@@ -34,9 +34,9 @@ public class WWDisplay extends JFrame {
 
 
     /**
+     * Ezen függvény inicializálja a mezőket a mapre és a vezérlő gomobokat a fejléc menübe.
      * @param column megadja hány oszlopból álljon a mezőkből álló wire world map
      * @param row megadja hány oszlopból álljon a mezőkből álló wire worldmap
-     * Ezen függvény inicializálja a mezőket a mapre és a vezérlő gomobokat a fejléc menübe.
      * */
     public void newWWMap(int column, int row){
         createMapButtons(column,row);

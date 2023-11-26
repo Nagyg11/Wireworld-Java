@@ -10,9 +10,9 @@ public class WWDataActual extends WWData{
     }
 
     /**
+     * Ezen konstruktor a paraméterben kapott oszlop és sor számot adja tovább az ős osztály konstruktorának.
      * @param column oszlopk számát adja meg. Azaz hány elmeből álljanak a listában szereplő listák.
      * @param row sorok számát adja meg. Hány listából álljon a listákat tároló lista.
-     * Ezen konstruktor a paraméterben kapott oszlop és sor számot adja tovább az ős osztály konstruktorának.
      * */
     public WWDataActual(int column, int row){
         super(column,row);
