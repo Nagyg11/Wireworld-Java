@@ -30,3 +30,9 @@ B
 src/Main/Main.java,5\d\5d88ecaa2385c6ca3ecc3bf87a82796206d0a916
 G
 src/Main/WireWorld.java,e\2\e2e46d1acf4555dda2e6c3a70260863e09144c4f
+I
+test/Data/testWWData.java,b\8\b8f48b205b255cfa9e2e9048cdcc8d0456d183a3
+I
+test/Data/TestWWData.java,4\f\4f09a54bc9cdfa7e8e36e1ed0a58de0d294500c3
+O
+test/Control/TestWWControl.java,3\b\3b7bb55c13776ee1607ab6a7ed8831862a40e52e

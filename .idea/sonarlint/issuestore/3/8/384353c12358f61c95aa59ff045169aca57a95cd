@@ -1,5 +1,7 @@
 
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤˜¥Ç8’Õ¥‚Á1
+G
+java:S1948"%Make "wwc" transient or serializable.(·Êª…ûÿÿÿÿ8¨Ñ˜ˆÁ1
 C
 java:S1948"&Make "mbal" transient or serializable.(¤ñøç8¿•“¼À1
 k

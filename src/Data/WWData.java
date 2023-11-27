@@ -46,7 +46,11 @@ public class WWData {
      * Ez a függvény a paraméterben kapott adattároló értékeit másolja az adattárolóba ami, meghívta. Lényege hogy ne referncia szeint legyen érték át adva.
      * @param wwData azon adattároló amelynek adatait másolni szeretnénk.
      * */
-    public void copy(WWData wwData){
+    public void copy(WWData wwData) throws IndexOutOfBoundsException{
+        if(this.row!=wwData.row || this.column!=wwData.column){
+            throw new IndexOutOfBoundsException("Nem megfelelő méretü adattárolót szeretne másolni.");
+        }
+
         for(int r=0;r<wwData.row;r++) {
             for (int c = 0; c < wwData.column; c++) {
                 setXY(c, r, wwData.getXY(c, r));
