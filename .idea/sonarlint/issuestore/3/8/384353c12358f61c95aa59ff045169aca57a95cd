@@ -1,0 +1,8 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤˜¥Ç8’Õ¥‚Á1
+C
+java:S1948"&Make "mbal" transient or serializable.(¤ñøç8¿•“¼À1
+k
+java:S3252!"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8Ã•“¼À1
+Z
+java:S3252#"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(®Ğ–8Ä•“¼À1
