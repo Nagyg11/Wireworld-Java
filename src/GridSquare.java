@@ -10,6 +10,9 @@ public class GridSquare extends GridLayout {
         super(rows, cols);
     }
 
+    /**
+     * Ezen függvény biztosítja, hogy a layout mindig megfelelően lakalmazkodjon, az ablak különböző méretezése mellett is.
+     * */
     @Override
     public void layoutContainer(Container parent) {
         synchronized (parent.getTreeLock()) {
