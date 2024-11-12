@@ -4,4 +4,4 @@ The program is written in Java to simulate wires and electrons running on them. 
 ## Sample images:
 
 ![Basic world](./readmdImg/basic.png)
-![Basic world](./readmdImg/andGate.png)
+![AND GATE](./readmdImg/andGate.png)
